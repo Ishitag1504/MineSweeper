@@ -1,0 +1,582 @@
+package com.example.minesweeper;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+
+public class MainActivity extends AppCompatActivity {
+    TextView Score;
+    TextView text;
+    int Curr_Score=0;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Button button_1_1=findViewById(R.id.button_1_1);
+        Button button_1_2=findViewById(R.id.button_1_2);
+        Button button_1_3=findViewById(R.id.button_1_3);
+        Button button_1_4=findViewById(R.id.button_1_4);
+        Button button_1_5=findViewById(R.id.button_1_5);
+        Button button_1_6=findViewById(R.id.button_1_6);
+        Button button_1_7=findViewById(R.id.button_1_7);
+        Button button_1_8=findViewById(R.id.button_1_8);
+
+        Button button_2_1=findViewById(R.id.button_2_1);
+        Button button_2_2=findViewById(R.id.button_2_2);
+        Button button_2_3=findViewById(R.id.button_2_3);
+        Button button_2_4=findViewById(R.id.button_2_4);
+        Button button_2_5=findViewById(R.id.button_2_5);
+        Button button_2_6=findViewById(R.id.button_2_6);
+        Button button_2_7=findViewById(R.id.button_2_7);
+        Button button_2_8=findViewById(R.id.button_2_8);
+
+        Button button_3_1=findViewById(R.id.button_3_1);
+        Button button_3_2=findViewById(R.id.button_3_2);
+        Button button_3_3=findViewById(R.id.button_3_3);
+        Button button_3_4=findViewById(R.id.button_3_4);
+        Button button_3_5=findViewById(R.id.button_3_5);
+        Button button_3_6=findViewById(R.id.button_3_6);
+        Button button_3_7=findViewById(R.id.button_3_7);
+        Button button_3_8=findViewById(R.id.button_3_8);
+
+        Button button_4_1=findViewById(R.id.button_4_1);
+        Button button_4_2=findViewById(R.id.button_4_2);
+        Button button_4_3=findViewById(R.id.button_4_3);
+        Button button_4_4=findViewById(R.id.button_4_4);
+        Button button_4_5=findViewById(R.id.button_4_5);
+        Button button_4_6=findViewById(R.id.button_4_6);
+        Button button_4_7=findViewById(R.id.button_4_7);
+        Button button_4_8=findViewById(R.id.button_4_8);
+
+        Button button_5_1=findViewById(R.id.button_5_1);
+        Button button_5_2=findViewById(R.id.button_5_2);
+        Button button_5_3=findViewById(R.id.button_5_3);
+        Button button_5_4=findViewById(R.id.button_5_4);
+        Button button_5_5=findViewById(R.id.button_5_5);
+        Button button_5_6=findViewById(R.id.button_5_6);
+        Button button_5_7=findViewById(R.id.button_5_7);
+        Button button_5_8=findViewById(R.id.button_5_8);
+
+        Button button_6_1=findViewById(R.id.button_6_1);
+        Button button_6_2=findViewById(R.id.button_6_2);
+        Button button_6_3=findViewById(R.id.button_6_3);
+        Button button_6_4=findViewById(R.id.button_6_4);
+        Button button_6_5=findViewById(R.id.button_6_5);
+        Button button_6_6=findViewById(R.id.button_6_6);
+        Button button_6_7=findViewById(R.id.button_6_7);
+        Button button_6_8=findViewById(R.id.button_6_8);
+
+        Button button_7_1=findViewById(R.id.button_7_1);
+        Button button_7_2=findViewById(R.id.button_7_2);
+        Button button_7_3=findViewById(R.id.button_7_3);
+        Button button_7_4=findViewById(R.id.button_7_4);
+        Button button_7_5=findViewById(R.id.button_7_5);
+        Button button_7_6=findViewById(R.id.button_7_6);
+        Button button_7_7=findViewById(R.id.button_7_7);
+        Button button_7_8=findViewById(R.id.button_7_8);
+
+        Button button_8_1=findViewById(R.id.button_8_1);
+        Button button_8_2=findViewById(R.id.button_8_2);
+        Button button_8_3=findViewById(R.id.button_8_3);
+        Button button_8_4=findViewById(R.id.button_8_4);
+        Button button_8_5=findViewById(R.id.button_8_5);
+        Button button_8_6=findViewById(R.id.button_8_6);
+        Button button_8_7=findViewById(R.id.button_8_7);
+        Button button_8_8=findViewById(R.id.button_8_8);
+
+        Score=findViewById(R.id.Score);
+
+
+
+
+        button_1_1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                no_bomb(button_1_1);
+                button_1_1.setText("1");
+            }
+        });
+        button_1_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                no_bomb(button_1_2);
+                button_1_2.setText("1");
+            }
+        });
+        button_1_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                no_bomb(button_1_3);
+                button_1_3.setText("1");
+            }
+        });
+        button_1_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                no_bomb(button_1_4);
+                button_1_4.setText("1");
+            }
+        });
+        button_1_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bomb_clicked(button_1_5,button_1_7,button_2_2,button_3_7,button_4_1,button_4_5,button_6_2,button_7_1,button_7_3,button_7_7);
+            }
+        });
+        button_1_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_1_6.setText("2");
+                no_bomb(button_1_6);
+            }
+        });
+        button_1_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bomb_clicked(button_1_5,button_1_7,button_2_2,button_3_7,button_4_1,button_4_5,button_6_2,button_7_1,button_7_3,button_7_7);
+            }
+        });
+        button_1_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_1_8.setText("1");
+                no_bomb(button_1_8);
+            }
+        });
+
+        button_2_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_2_1.setText("1");
+                no_bomb(button_2_1);
+            }
+        });
+        button_2_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bomb_clicked(button_1_5,button_1_7,button_2_2,button_3_7,button_4_1,button_4_5,button_6_2,button_7_1,button_7_3,button_7_7);
+            }
+        });
+        button_2_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_2_3.setText("1");
+                no_bomb(button_2_3);
+            }
+        });
+        button_2_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_2_4.setText(" ");
+                no_bomb(button_2_4);
+            }
+        });
+        button_2_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_2_5.setText("1");
+                no_bomb(button_2_5);
+            }
+        });
+        button_2_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_2_6.setText("3");
+                no_bomb(button_2_6);
+            }
+        });
+        button_2_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_2_7.setText("2");
+                no_bomb(button_2_7);
+            }
+        });
+        button_2_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_2_8.setText("1");
+                no_bomb(button_2_8);
+            }
+        });
+
+        button_3_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_3_1.setText("2");
+                no_bomb(button_3_1);
+            }
+        });
+        button_3_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_3_2.setText("2");
+                no_bomb(button_3_2);
+            }
+        });
+        button_3_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_3_3.setText("1");
+                no_bomb(button_3_3);
+            }
+        });
+        button_3_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_3_4.setText(" ");
+                no_bomb(button_3_4);
+            }
+        });
+        button_3_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_3_5.setText("1");
+                no_bomb(button_3_5);
+            }
+        });
+        button_3_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_3_6.setText("2");
+                no_bomb(button_3_6);
+            }
+        });
+        button_3_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bomb_clicked(button_1_5,button_1_7,button_2_2,button_3_7,button_4_1,button_4_5,button_6_2,button_7_1,button_7_3,button_7_7);
+            }
+        });
+        button_3_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_3_8.setText("1");
+                no_bomb(button_3_8);
+            }
+        });
+
+        button_4_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bomb_clicked(button_1_5,button_1_7,button_2_2,button_3_7,button_4_1,button_4_5,button_6_2,button_7_1,button_7_3,button_7_7);
+            }
+        });
+        button_4_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_4_2.setText("1");
+                no_bomb(button_4_2);
+            }
+        });
+        button_4_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_4_3.setText(" ");
+                no_bomb(button_4_3);
+            }
+        });
+        button_4_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_4_4.setText("1");
+                no_bomb(button_4_4);
+            }
+        });
+        button_4_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bomb_clicked(button_1_5,button_1_7,button_2_2,button_3_7,button_4_1,button_4_5,button_6_2,button_7_1,button_7_3,button_7_7);
+            }
+        });
+        button_4_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_4_6.setText("2");
+                no_bomb(button_4_6);
+            }
+        });
+        button_4_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_4_7.setText("1");
+                no_bomb(button_4_7);
+            }
+        });
+        button_4_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_4_8.setText("1");
+                no_bomb(button_4_8);
+            }
+        });
+
+        button_5_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_5_1.setText("2");
+                no_bomb(button_5_1);
+            }
+        });
+        button_5_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_5_2.setText("2");
+                no_bomb(button_5_2);
+            }
+        });
+        button_5_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_5_3.setText("1");
+                no_bomb(button_5_3);
+            }
+        });
+        button_5_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_5_4.setText(" ");
+                no_bomb(button_5_4);
+            }
+        });
+        button_5_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_5_5.setText(" ");
+                no_bomb(button_5_5);
+            }
+        });
+        button_5_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_5_6.setText(" ");
+                no_bomb(button_5_6);
+            }
+        });
+        button_5_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_5_7.setText(" ");
+                no_bomb(button_5_7);
+            }
+        });
+        button_5_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_5_8.setText(" ");
+                no_bomb(button_5_8);
+            }
+        });
+
+        button_6_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_6_1.setText("2");
+                no_bomb(button_6_1);
+            }
+        });
+        button_6_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bomb_clicked(button_1_5,button_1_7,button_2_2,button_3_7,button_4_1,button_4_5,button_6_2,button_7_1,button_7_3,button_7_7);
+            }
+        });
+        button_6_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_6_3.setText("2");
+                no_bomb(button_6_3);
+            }
+        });
+        button_6_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_6_4.setText("1");
+                no_bomb(button_6_4);
+            }
+        });
+        button_6_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_6_5.setText(" ");
+                no_bomb(button_6_5);
+            }
+        });
+        button_6_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_6_6.setText("1");
+                no_bomb(button_6_6);
+            }
+        });
+        button_6_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_6_7.setText("1");
+                no_bomb(button_6_7);
+            }
+        });
+        button_6_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_6_8.setText("1");
+                no_bomb(button_6_8);
+            }
+        });
+
+        button_7_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bomb_clicked(button_1_5,button_1_7,button_2_2,button_3_7,button_4_1,button_4_5,button_6_2,button_7_1,button_7_3,button_7_7);
+            }
+        });
+        button_7_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_7_2.setText("3");
+                no_bomb(button_7_2);
+            }
+        });
+        button_7_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bomb_clicked(button_1_5,button_1_7,button_2_2,button_3_7,button_4_1,button_4_5,button_6_2,button_7_1,button_7_3,button_7_7);
+            }
+        });
+        button_7_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_7_4.setText("1");
+                no_bomb(button_7_4);
+            }
+        });
+        button_7_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_7_5.setText(" ");
+                no_bomb(button_7_5);
+            }
+        });
+        button_7_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_7_6.setText("1");
+                no_bomb(button_7_6);
+            }
+        });
+        button_7_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bomb_clicked(button_1_5,button_1_7,button_2_2,button_3_7,button_4_1,button_4_5,button_6_2,button_7_1,button_7_3,button_7_7);
+            }
+        });
+        button_7_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_7_8.setText("1");
+                no_bomb(button_7_8);
+            }
+        });
+
+        button_8_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_8_1.setText("1");
+                no_bomb(button_8_1);
+            }
+        });
+        button_8_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_8_2.setText("2");
+                no_bomb(button_8_2);
+            }
+        });
+        button_8_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_8_3.setText("1");
+                no_bomb(button_8_3);
+            }
+        });
+        button_8_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_8_4.setText("1");
+                no_bomb(button_8_4);
+            }
+        });
+        button_8_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_8_5.setText("0");
+                no_bomb(button_8_5);
+            }
+        });
+        button_8_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_8_6.setText("1");
+                no_bomb(button_8_6);
+            }
+        });
+        button_8_7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_8_7.setText("1");
+                no_bomb(button_8_7);
+            }
+        });
+        button_8_8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                button_8_8.setText("1");
+                no_bomb(button_8_8);
+            }
+        });
+
+    }
+    void no_bomb(Button button)
+    {
+        button.setBackgroundColor(button.getContext().getResources().getColor(R.color.light_brown));
+        button.setEnabled(false);
+        Curr_Score+=5;
+        String Text ="\n Score:"+ Integer.toString(Curr_Score)+"         Mines: 10";
+        Score.setText(Text);
+        if (Curr_Score==270){
+            text.setText("You Win! Congratulations");
+        }
+    }
+    void bomb_clicked(Button b1,Button b2,Button b3,Button b4,Button b5,Button b6,Button b7,Button b8,Button b9,Button b10)
+    {
+        b1.setBackgroundColor(b1.getContext().getResources().getColor(R.color.red));
+        b2.setBackgroundColor(b2.getContext().getResources().getColor(R.color.red));
+        b3.setBackgroundColor(b3.getContext().getResources().getColor(R.color.red));
+        b4.setBackgroundColor(b4.getContext().getResources().getColor(R.color.red));
+        b5.setBackgroundColor(b5.getContext().getResources().getColor(R.color.red));
+        b6.setBackgroundColor(b6.getContext().getResources().getColor(R.color.red));
+        b7.setBackgroundColor(b7.getContext().getResources().getColor(R.color.red));
+        b8.setBackgroundColor(b8.getContext().getResources().getColor(R.color.red));
+        b9.setBackgroundColor(b9.getContext().getResources().getColor(R.color.red));
+        b10.setBackgroundColor(b10.getContext().getResources().getColor(R.color.red));
+        text.setText("Better Luck Next Time!");
+        final VibrationEffect vibrationEffect1;
+        final Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        // this is the only type of the vibration which requires system version Oreo (API 26)
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+
+            // this effect creates the vibration of default amplitude for 1000ms(1 sec)
+            vibrationEffect1 = VibrationEffect.createOneShot(1000, VibrationEffect.DEFAULT_AMPLITUDE);
+
+            // it is safe to cancel other vibrations currently taking place
+            vibrator.cancel();
+            vibrator.vibrate(vibrationEffect1);
+        }
+    }
+}
